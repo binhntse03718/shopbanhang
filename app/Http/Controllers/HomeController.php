@@ -7,9 +7,9 @@ use App\Slide;
 
 class HomeController extends Controller
 {
-    public function getIndex() {
+    public function getHome() {
         $slide = Slide::all();
-        print_r($slide);
+        dd($slide);
         exit;
         // return view('page.trangchu', ['slide'=>$slide]);
         return view('page.trangchu', compact('slide'));
