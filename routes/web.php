@@ -3,15 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+  |--------------------------------------------------------------------------
+  | Web Routes
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register web routes for your application. These
+  | routes are loaded by the RouteServiceProvider within a group which
+  | contains the "web" middleware group. Now create something great!
+  |
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +23,7 @@ Route::get('database1', function () {
         $table->increments('id')->unsigned();
         $table->string('name', 255);
         $table->string('email', 255);
+        $table->string('password', 255);
         $table->string('gender', 10);
         $table->integer('phone_number');
         $table->string('address', 255);
@@ -127,6 +128,17 @@ Route::get('database8', function () {
     echo "Đã tạo bảng customer thành công";
 });
 
+//Tạo bảng Account admin
+Route::get('database9', function () {
+    Schema::create('admin', function($table) {
+        $table->increments('id')->unsigned();
+        $table->string('username', 255);
+        $table->string('password', 255);
+    });
+    
+    echo "Đã tạo bảng accout admin thành công";
+});
+
 //Xóa bảng
 Route::get('xoabang', function () {
     Schema::drop('bill_detail');
@@ -135,4 +147,15 @@ Route::get('xoabang', function () {
 });
 
 
+
+//Back-end
 Route::get('home', 'HomeController@getHome');
+
+//Auth
+
+Route::get('dangnhap', function () {
+    return view('layout admin/login');
+});
+
+Route::post('login', 'AuthController@adminlogin')->name('login');
+
