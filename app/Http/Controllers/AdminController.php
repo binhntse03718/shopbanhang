@@ -9,7 +9,7 @@ use App\Model\Admin;
 class AdminController extends Controller
 {
     public function ViewResult() {
-        return view('layout admin.login');
+        return view('layout_admin.login');
     }
 
     public function AdminLogin(Request $request) {
@@ -17,9 +17,9 @@ class AdminController extends Controller
         $check = $request->only('username', 'password');
 
         if(Auth::attempt($check)) {
-            return redirect('layout admin.dashboard');
+            return redirect('layout_admin.dashboard');
         } else {
-            return redirect('layout admin.login')->with(dd('Sai tên mật khẩu'));
+            return redirect('layout_admin.login')->with(dd('Sai tên mật khẩu'));
         }
     }
 }

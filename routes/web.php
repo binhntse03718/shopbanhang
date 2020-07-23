@@ -26,9 +26,39 @@ Route::get('dangnhap', 'AdminController@ViewResult');
 
 Route::post('dangnhap', 'AdminController@AdminLogin')->name('login');
 
-//check
-Route::get('thu', function() {
-    $thu = App\Model\Admin::find(1);
+//Admin
+Route::group(['prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'slide'], function () {
+        Route::get('listSlide', 'AdminSlideController@listSlide');
 
-    echo $thu;
+        Route::get('addSlide', 'AdminSlideController@addSlide');
+
+        Route::get('changeSlide', 'AdminSlideController@changeSlide');
+    });
+
+    Route::group(['prefix' => 'product'], function () {
+        Route::get('listProduct', 'AdminProductController@listProduct');
+
+        Route::get('addProduct', 'AdminProductController@addProduct');
+
+        Route::get('changeProduct', 'AdminProductController@changeProduct');
+    });
+
+    Route::group(['prefix' => 'new'], function () {
+
+        Route::get('listNew', 'AdminNewController@listNew');
+
+        Route::get('addNew', 'AdminNewController@addNew');
+
+        Route::get('changeNew', 'AdminNewController@changeNew');
+    });
+
+    Route::group(['prefix' => 'user'], function () {
+
+        Route::get('listUser', 'AdminUserController@listUser');
+
+        Route::get('addUser', 'AdminUserController@addUser');
+
+        Route::get('changeUser', 'AdminUserController@changeUser');
+    });
 });
