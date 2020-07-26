@@ -15,4 +15,6 @@ class Bill extends Model
     public function bill() {
         return $this->belongsTo('App\Model\Customer', 'id_customer', 'id');
     }
+
+    public $timestamps = false;
 }

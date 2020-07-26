@@ -18,21 +18,14 @@
                     Please Sign In
                 </div>
                 <div class="input-group d-flex flex-column align-content-center">
-<<<<<<< HEAD
                     <fieldset>
                     <form action="dangnhap" method="POST">
-=======
-                    <form action="{{route('login')}}" method="post">
->>>>>>> 5cecc6462efff8a835f5fadc09f6023b25663533
                         @csrf
                         <input type="text" name="username" class="w-50" placeholder="Username">
                         <input type="password" name="password" class="w-50" placeholder="Password">
                         <button class="btn" type="submit">Login</button>
                     </form>
-<<<<<<< HEAD
                     </fieldset>
-=======
->>>>>>> 5cecc6462efff8a835f5fadc09f6023b25663533
                 </div>
             </div>
         </div>

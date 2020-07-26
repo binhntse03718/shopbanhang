@@ -11,4 +11,6 @@ class Customer extends Model
     public function customer() {
         return $this->hasMany('App\Model\Bill', 'id_customer', 'id');
     }
+
+    public $timestamps = false;
 }

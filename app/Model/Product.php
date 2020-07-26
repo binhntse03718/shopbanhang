@@ -15,4 +15,6 @@ class Product extends Model
     public function bill() {
         return $this->hasMany('App\Model\BillDetail', 'id_bill', 'id');
     }
+
+    public $timestamps = false;
 }

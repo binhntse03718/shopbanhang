@@ -11,4 +11,6 @@ class ProductType extends Model
     public function product() {
         return $this->hasMany('App\Model\Product', 'id_type', 'id');
     }
+
+    public $timestamps = false;
 }
