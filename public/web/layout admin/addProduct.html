@@ -20,7 +20,7 @@
             <p class="h2">Add Product</p>
         </div>
         <div class="form-input">
-            <form action="admin/product/addProduct" method="POST">
+            <form action="/admin/product/addProduct" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <p class="h4">Name of Product</p>
@@ -28,11 +28,18 @@
                 </div>
                 <div class="form-group">
                     <p class="h4">Id Type of Product</p>
-                    <input name="id_type" class="input1" type="number" placeholder="Nhập id của product" minlength="1" maxlength="11">
+                    <input list="id_types" name="id_types">
+                    <datalist id="id_types">
+                        <option value="1">Ford
+                        <option value="2">Honda
+                        <option value="3">Hyundai
+                        <option value="4">Kia
+                        <option value="5">Mazda
+                    </datalist>
                 </div>
                 <div class="form-group" div class="form-group">
                     <p class="h4">Description</p>
-                    <input name="description" type="text" placeholder="Nhập mô tả của product" style="width: 300px; height: 150px;">
+                    <textarea name="description" type="text" placeholder="Nhập mô tả của product" style="width: 300px; height: 150px;"></textarea>
                 </div>
                 <div class="form-group">
                     <p class="h4">Unit Price</p>
