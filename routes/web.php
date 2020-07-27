@@ -28,6 +28,10 @@ Route::post('dangnhap', 'AdminController@AdminLogin')->name('login');
 
 //Admin
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('dashboard', function() {
+        return view('layout_admin.dashboard');
+    });
+
     Route::group(['prefix' => 'slide'], function () {
         Route::get('listSlide', 'AdminSlideController@listSlide');
 
