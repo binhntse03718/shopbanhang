@@ -38,7 +38,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('addSlide', 'AdminSlideController@get_addSlide');
         Route::post('addSlide', 'AdminSlidetController@post_addSlide');
 
-        Route::get('changeSlide', 'AdminSlideController@changeSlide');
+        Route::get('changeSlide/{id}', 'AdminSlideController@get_changeSlide');
+        Route::post('changeSlide/{id}', 'AdminSlideController@post_changeSlide');
     });
 
     Route::group(['prefix' => 'product'], function () {
@@ -47,7 +48,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('addProduct', 'AdminProductController@get_addProduct');
         Route::post('addProduct', 'AdminProductController@post_addProduct');
 
-        Route::get('changeProduct', 'AdminProductController@changeProduct');
+        Route::get('changeProduct', 'AdminProductController@get_changeProduct');
+        Route::post('changeProduct', 'AdminProductController@post_changeProduct');
     });
 
     Route::group(['prefix' => 'new'], function () {
@@ -56,7 +58,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('addNew', 'AdminNewController@get_addNew');
         Route::post('addNew', 'AdminNewController@post_addNew');
 
-        Route::get('changeNew', 'AdminNewController@changeNew');
+        Route::get('changeNew', 'AdminNewController@get_changeNew');
+        Route::post('changeNew', 'AdminProductController@post_changeNew');
     });
 
     Route::group(['prefix' => 'user'], function () {
@@ -66,6 +69,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('addUser', 'AdminUserController@get_addUser');
         Route::post('addUser', 'AdminUsertController@post_addUser');
 
-        Route::get('changeUser', 'AdminUserController@changeUser');
+        Route::get('changeUser', 'AdminUserController@get_changeUser');
+        Route::post('changeUser', 'AdminProductController@post_changeUser');
     });
 });

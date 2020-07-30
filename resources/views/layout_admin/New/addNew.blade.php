@@ -28,7 +28,7 @@
                 <p class="h2">Add New</p>
             </div>
             <div class="form-input">
-                <form action="/admin/product/addProduct" method="POST">
+                <form action="/admin/new/addNew" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                         <p class="h4">Title</p>

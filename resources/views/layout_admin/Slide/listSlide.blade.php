@@ -44,7 +44,7 @@
                                         <td class="td">{{ $sd->id }}</td>
                                         <td><img width="250px" src="/image/slide/{{ $sd->image }}"></td>
                                         <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
-                                        <td><a href="#" class="btn"><i class="fa fa-pencil"></i></a></td>
+                                        <td><a href="/admin/slide/changeSlide/{{ $sd->id }}" class="btn"><i class="fa fa-pencil"></i></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
