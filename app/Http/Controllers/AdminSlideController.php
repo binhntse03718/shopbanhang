@@ -70,4 +70,11 @@ class AdminSlideController extends Controller
 
         return redirect('admin/slide/changeSlide/'.$id)->with('success', 'Sửa slide thành công');
     }
+
+    public function deleteSlide($id) {
+        $slide = Slide::find($id);
+        $slide->delete();
+
+        return redirect('/admin/slide/listSlide')-with('success', 'Xóa slide thành công');
+    }
 }

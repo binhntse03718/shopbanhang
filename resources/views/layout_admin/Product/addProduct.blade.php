@@ -57,7 +57,7 @@
                     <div class="form-group">
                         <p class="h4">Promotion Price</p>
                         $ <input name="promotion_price" class="input1" type="number"
-                            placeholder="Nhập giá khuyến mãi của product" minlength="1" maxlength="255">
+                            placeholder="Nhập giá khuyến mãi của product">
                     </div>
                     <div class="form-group">
                         <p class="h4">Image</p>

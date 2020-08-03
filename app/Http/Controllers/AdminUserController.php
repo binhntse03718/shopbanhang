@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\User;
+use Valaditor;
 
 class AdminUserController extends Controller
 {
@@ -71,5 +72,12 @@ class AdminUserController extends Controller
         $user -> save();
 
         return redirect('admin/user/addUser')->with('success', 'Thêm user thành công');
+    }
+
+    public function deleteUser($id) {
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect('/admin/user/listUser')-with('success', 'Xóa User thành công');
     }
 }

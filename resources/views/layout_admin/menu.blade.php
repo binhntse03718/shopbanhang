@@ -41,10 +41,10 @@
                         </li>
                         <li class="list-group-item" style="background: #d9edf7">
                             <div class="catelogy">
-                                <a class="btn btn-secondary" data-toggle="collapse" data-target="#target1">
+                                <a class="btn btn-secondary" data-toggle="collapse" data-target="#target3">
                                     News
                                 </a>
-                                <div id="target1" class="collapse d-flex flex-column">
+                                <div id="target3" class="collapse d-flex flex-column">
                                     <div><a class="btn btn-secondary" href="/admin/new/listNew">List News</a></div>
                                     <div><a class="btn btn-secondary" href="/admin/new/addNew">Add News</a></div>
                                 </div>
@@ -52,10 +52,10 @@
                         </li>
                         <li class="list-group-item" style="background: #d9edf7">
                             <div class="">
-                                <a class="btn btn-secondary" data-toggle="collapse" data-target="#target3">
+                                <a class="btn btn-secondary" data-toggle="collapse" data-target="#target4">
                                     User
                                 </a>
-                                <div id="target3" class="collapse d-flex flex-column">
+                                <div id="target4" class="collapse d-flex flex-column">
                                     <div><a class="btn btn-secondary" href="/admin/user/listUser">List User</a></div>
                                     <div><a class="btn btn-secondary" href="/admin/user/addUser">Add User</a></div>
                                 </div>

@@ -42,11 +42,11 @@
                                 @foreach($new as $new)
                                     <tr align="center">
                                         <td class="td">{{ $new->id }}</td>
-                                        <td>{{ $user->title }}</td>
-                                        <td>{{ $user->content }}</td>
-                                        <td><img width="250px" src="/image/new/{{ $new->image }}"></td>
-                                        <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
-                                        <td><a href="#" class="btn"><i class="fa fa-pencil"></i></a></td>
+                                        <td>{{ $new->title }}</td>
+                                        <td>{{ $new->content }}</td>
+                                        <td><img width="250px" src="/image/news/{{ $new->image }}"></td>
+                                        <td><a href="" class="btn"><i class="fa fa-trash"></i></a></td>
+                                        <td><a href="/admin/new/changeNew/{{ $new->id }}" class="btn"><i class="fa fa-pencil"></i></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
