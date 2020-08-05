@@ -10,12 +10,11 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        // $this->call(userSeeder::class);
-        // $this->call(adminSeeder::class);
+        $this->call(userSeeder::class);
+        $this->call(adminSeeder::class);
         $this->call(newsSeeder::class);
-        // $this->call(slideSeeder::class);
-        // $this->call(product_typeSeeder::class);
-        // $this->call(productSeeder::class);
+        $this->call(slideSeeder::class);
+        $this->call(product_typeSeeder::class);
     }
 
 }
@@ -23,10 +22,10 @@ class DatabaseSeeder extends Seeder {
 class slideSeeder extends Seeder {
     public function run()
     {
-        DB::table('silde')->insert(
+        DB::table('slide')->insert([
                 ['image' => 'slide1.jpg'],
                 ['image' => 'slide2.jpg'],
-                ['image' => 'slide3.png']);
+                ['image' => 'slide3.png']]);
     }
 }
 
@@ -50,38 +49,6 @@ class product_typeSeeder extends Seeder {
                 ['id' => '3', 'name' => 'Hyundai', 'description' => 'Hyundai Accent và Grand i10 tiếp tục là những mẫu xe ăn khách nhất của TC MOTOR với 1,163 xe và 1,022 xe bán ra trong tháng 6, cộng dồn 7,349 xe và 6,414 xe trong 6 tháng đầu năm.', 'image' => 'hyundai_santafe.jpg'],
                 ['id' => '4', 'name' => 'Kia', 'description' => 'The Owners Portal is your one-stop-shop for all things Kia. When you sign up, you can book dealership appointments, see maintenance milestones, make car payments if financed by Kia Motors Finance, view owner manuals and more!', 'image' => 'kia_cerato.jpg'],
                 ['id' => '5', 'name' => 'Mazda', 'description' => 'Năm 2011, Thaco hợp tác với tập đoàn Mazda Nhật Bản xây dựng nhà máy sản xuất và lắp ráp xe Mazda tại khu Kinh tế mở Chu Lai, Quảng Nam với công suất 10.000 xe/năm', 'image' => 'mazda_mx5.jpg']]);
-    }
-}
-
-class productSeeder extends Seeder {
-    public function run()
-    {
-        DB::table('product')->insert(
-                ['name' => 'Ford Escape', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Ford Everest', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Ford Explorer', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Ford F-150', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Ford Fiesta', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Ford Ranger', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Ford Tourneo', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Honda Accord', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Honda City', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Honda Civic', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Honda Crv', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Honda HRV', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Hyundai Accent', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Hyundai Grand-i10', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Hyundai Santafe', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Hyundai SUV', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Hyundai Tucson', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Kia Cerato', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Mazda 2', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Mazda 3', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Mazda 6', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Mazda CX-30', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Mazda CX-5', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Mazda CX-9', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => ''],
-                ['name' => 'Mazda MX-5', 'id_type' => '', 'description' => '', 'unit_price' => '', 'promotion_price' => '', 'image' => '', 'unit' => '', 'new' => '']);
     }
 }
 

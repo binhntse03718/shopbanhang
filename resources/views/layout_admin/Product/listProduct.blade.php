@@ -25,6 +25,7 @@
             </div>
             <div class="content">
                 <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+                    @include('errors')
                     <div class="text-center">
                         <p class="h2">Danh Sách Product</p>
                     </div>
@@ -55,12 +56,15 @@
                                         <td><img width="250px" src="/image/product/ford/{{ $pd->image }}"></td>
                                         <td>{{ $pd->unit }}</td>
                                         <td>{{ $pd->new }}</td>
-                                        <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
-                                        <td><a href="#" class="btn"><i class="fa fa-pencil"></i></a></td>
+                                        <td><a href="/admin/product/deleteProduct/{{ $pd->id }}" class="btn"><i class="fa fa-trash"></i></a></td>
+                                        <td><a href="/admin/product/changeProduct/{{ $pd->id }}" class="btn"><i class="fa fa-pencil"></i></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div>
+                        {!! $product->links() !!}
                     </div>
                 </div>
             </div>

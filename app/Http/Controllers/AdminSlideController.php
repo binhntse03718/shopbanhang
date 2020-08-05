@@ -8,8 +8,13 @@ use Validator;
 
 class AdminSlideController extends Controller
 {
-    public function listSlide() {
-        $slide = Slide::all();
+    public function listSlide5() {
+        $slide = Slide::paginate(5);
+        return view('layout_admin.Slide.listSlide', ['slide' => $slide]);
+    }
+
+    public function listSlide10() {
+        $slide = Slide::paginate(10);
         return view('layout_admin.Slide.listSlide', ['slide' => $slide]);
     }
 
@@ -17,7 +22,7 @@ class AdminSlideController extends Controller
         return view('layout_admin.Slide.addSlide');
     }
 
-    public function post_addSlide() {
+    public function post_addSlide(Request $request) {
         $rules = [
             'image' => 'required'
         ];
@@ -75,6 +80,6 @@ class AdminSlideController extends Controller
         $slide = Slide::find($id);
         $slide->delete();
 
-        return redirect('/admin/slide/listSlide')-with('success', 'Xóa slide thành công');
+        return redirect('/admin/slide/listSlide')->with('success', 'Xóa slide thành công');
     }
 }

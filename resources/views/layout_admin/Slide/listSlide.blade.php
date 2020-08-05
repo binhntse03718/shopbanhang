@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/c198a983b2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -25,6 +27,7 @@
             </div>
             <div class="content">
                 <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+                    @include('errors')
                     <div class="text-center">
                         <p class="h2">Danh Sách Slide</p>
                     </div>
@@ -39,16 +42,31 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($slide as $sd)
+                                @foreach ($slide as $sd)
                                     <tr align="center">
                                         <td class="td">{{ $sd->id }}</td>
                                         <td><img width="250px" src="/image/slide/{{ $sd->image }}"></td>
-                                        <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
-                                        <td><a href="/admin/slide/changeSlide/{{ $sd->id }}" class="btn"><i class="fa fa-pencil"></i></a></td>
+                                        <td><a href="/admin/slide/deleteSlide/{{ $sd->id }}" class="btn"><i
+                                                    class="fa fa-trash"></i></a></td>
+                                        <td><a href="/admin/slide/changeSlide/{{ $sd->id }}" class="btn"><i
+                                                    class="fa fa-pencil"></i></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="pagination">
+                        <div class="page">
+                            {!! $slide->links() !!}
+                        </div>
+                        <div class="combox">
+                            <select onchange="window.location = this.options[this.selectedIndex].value">
+                                <option id="5" value="/admin/slide/listSlide5">5</option>
+                                <option id="10" value="/admin/slide/listSlide10">10</option>
+                            </select>
+                        </div>
+                        <script>
+                        </script>
                     </div>
                 </div>
             </div>

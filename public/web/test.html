@@ -1,0 +1,14 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<select class="mySelect">
+  <option value="1">Date</option>
+  <option value="2">Helpfulness</option>
+</select>
+
+<script>
+    $(function() {
+        $('.mySelect').on('change', function() {
+            $.cookie('mySelect', this.value);
+        });
+        $('.mySelect').val($.cookie('mySelect') || 1);
+    });
+</script>

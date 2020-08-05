@@ -33,10 +33,11 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'slide'], function () {
-        Route::get('listSlide', 'AdminSlideController@listSlide');
+        Route::get('listSlide5', 'AdminSlideController@listSlide5');
+        Route::get('listSlide10', 'AdminSlideController@listSlide10');
 
         Route::get('addSlide', 'AdminSlideController@get_addSlide');
-        Route::post('addSlide', 'AdminSlidetController@post_addSlide');
+        Route::post('addSlide', 'AdminSlideController@post_addSlide');
 
         Route::get('changeSlide/{id}', 'AdminSlideController@get_changeSlide');
         Route::post('changeSlide/{id}', 'AdminSlideController@post_changeSlide');
@@ -45,7 +46,8 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'product'], function () {
-        Route::get('listProduct', 'AdminProductController@listProduct');
+        Route::get('listProduct5', 'AdminProductController@listProduct5');
+        Route::get('listProduct10', 'AdminProductController@listProduct10');
 
         Route::get('addProduct', 'AdminProductController@get_addProduct');
         Route::post('addProduct', 'AdminProductController@post_addProduct');
@@ -57,7 +59,8 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'new'], function () {
-        Route::get('listNew', 'AdminNewController@listNew');
+        Route::get('listNew5', 'AdminNewController@listNew5');
+        Route::get('listNew10', 'AdminNewController@listNew10');
 
         Route::get('addNew', 'AdminNewController@get_addNew');
         Route::post('addNew', 'AdminNewController@post_addNew');
@@ -69,8 +72,8 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'user'], function () {
-
-        Route::get('listUser', 'AdminUserController@listUser');
+        Route::get('listUser5', 'AdminUserController@listUser5');
+        Route::get('listUser10', 'AdminUserController@listUser10');
 
         Route::get('addUser', 'AdminUserController@get_addUser');
         Route::post('addUser', 'AdminUsertController@post_addUser');

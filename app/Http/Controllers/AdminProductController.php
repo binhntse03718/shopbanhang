@@ -10,8 +10,13 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class AdminProductController extends Controller
 {
-    public function listProduct() {
-        $product = Product::all();
+    public function listProduct5() {
+        $product = Product::paginate(5);
+        return view('layout_admin.Product.listProduct', ['product' => $product]);
+    }
+
+    public function listProduct10() {
+        $product = Product::paginate(10);
         return view('layout_admin.Product.listProduct', ['product' => $product]);
     }
 
@@ -118,6 +123,6 @@ class AdminProductController extends Controller
         $product = Product::find($id);
         $product->delete();
 
-        return redirect('/admin/product/listProduct')-with('success', 'Xóa product thành công');
+        return redirect('/admin/product/listProduct')->with('success', 'Xóa product thành công');
     }
 }

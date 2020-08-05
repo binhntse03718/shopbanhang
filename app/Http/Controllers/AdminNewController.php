@@ -9,8 +9,13 @@ use Validator;
 
 class AdminNewController extends Controller
 {
-    public function listNew() {
-        $new = News::all();
+    public function listNew5() {
+        $new = News::paginate(5);
+        return view('layout_admin.New.listNew', ['new' => $new]);
+    }
+
+    public function listNew10() {
+        $new = News::paginate(10);
         return view('layout_admin.New.listNew', ['new' => $new]);
     }
 
@@ -18,7 +23,7 @@ class AdminNewController extends Controller
         return view('layout_admin.New.addNew');
     }
 
-    public function post_addNew() {
+    public function post_addNew(Request $request) {
 
         $rules = [
             'title' => 'required',
@@ -32,7 +37,7 @@ class AdminNewController extends Controller
             'image.required' => 'Title không được để trống',
         ];
 
-        $validator = Validator::make($request->all, $rules, $messages);
+        $validator = Validator::make($request->all(), $rules, $messages);
 
         if($validator->fails()) {
             return redirect()->back()->withErrors($validator);
@@ -45,7 +50,7 @@ class AdminNewController extends Controller
 
         $new -> save();
 
-        return redirect('admin/new/addNew')->with('success', 'Thêm New thành công');
+        return redirect('/admin/new/addNew')->with('success', 'Thêm New thành công');
     }
 
     public function get_changeNew($id) {
@@ -83,13 +88,13 @@ class AdminNewController extends Controller
 
         $new -> save();
 
-        return redirect('admin/new/changeNew')->with('success', 'Thay đổi New thành công');
+        return redirect('/admin/new/changeNew')->with('success', 'Thay đổi New thành công');
     }
 
     public function deleteNew($id) {
         $new = News::find($id);
         $new->delete();
 
-        return redirect('/admin/new/listNew')-with('success', 'Xóa New thành công');
+        return redirect('/admin/new/listNew')->with('success', 'Xóa New thành công');
     }
 }

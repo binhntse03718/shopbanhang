@@ -8,8 +8,13 @@ use Valaditor;
 
 class AdminUserController extends Controller
 {
-    public function listUser() {
-        $user = User::all();
+    public function listUser5() {
+        $user = User::paginate(5);
+        return view('layout_admin.User.listUser', ['user' => $user]);
+    }
+
+    public function listUser10() {
+        $user = User::paginate(10);
         return view('layout_admin.User.listUser', ['user' => $user]);
     }
 
@@ -78,6 +83,6 @@ class AdminUserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/admin/user/listUser')-with('success', 'Xóa User thành công');
+        return redirect('/admin/user/listUser')->with('success', 'Xóa User thành công');
     }
 }

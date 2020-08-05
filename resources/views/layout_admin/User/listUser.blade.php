@@ -25,6 +25,7 @@
             </div>
             <div class="content">
                 <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+                    @include('errors')
                     <div class="text-center">
                         <p class="h2">Danh Sách User</p>
                     </div>
@@ -42,21 +43,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($user as $user)
+                                @foreach($user as $users)
                                     <tr align="center">
-                                        <td class="td">{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->password }}</td>
-                                        <td>{{ $user->gender }}</td>
-                                        <td>{{ $user->phone_number }}</td>
-                                        <td>{{ $user->address }}</td>
-                                        <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
-                                        <td><a href="#" class="btn"><i class="fa fa-pencil"></i></a></td>
+                                        <td class="td">{{ $users->id }}</td>
+                                        <td>{{ $users->name }}</td>
+                                        <td>{{ $users->email }}</td>
+                                        <td>{{ $users->password }}</td>
+                                        <td>{{ $users->gender }}</td>
+                                        <td>{{ $users->phone_number }}</td>
+                                        <td>{{ $users->address }}</td>
+                                        <td><a href="/admin/user/deleteUser/{{ $users->id }}" class="btn"><i class="fa fa-trash"></i></a></td>
+                                        <td><a href="/admin/user/changeUser/{{ $users->id }}" class="btn"><i class="fa fa-pencil"></i></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div>
+                        {!! $user->links() !!}
                     </div>
                 </div>
             </div>

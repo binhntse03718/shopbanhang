@@ -23,7 +23,7 @@
                                     Slide
                                 </a>
                                 <div id="target1" class="collapse d-flex flex-column">
-                                    <div><a class="btn btn-secondary" href="/admin/slide/listSlide">List Slide</a></div>
+                                    <div><a class="btn btn-secondary" href="/admin/slide/listSlide5">List Slide</a></div>
                                     <div><a class="btn btn-secondary" href="/admin/slide/addSlide">Add Slide</a></div>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                     Product
                                 </a>
                                 <div id="target2" class="collapse d-flex flex-column">
-                                    <div><a class="btn btn-secondary" href="/admin/product/listProduct">List Product</a></div>
+                                    <div><a class="btn btn-secondary" href="/admin/product/listProduct5">List Product</a></div>
                                     <div><a class="btn btn-secondary" href="/admin/product/addProduct">Add Product</a></div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                     News
                                 </a>
                                 <div id="target3" class="collapse d-flex flex-column">
-                                    <div><a class="btn btn-secondary" href="/admin/new/listNew">List News</a></div>
+                                    <div><a class="btn btn-secondary" href="/admin/new/listNew5">List News</a></div>
                                     <div><a class="btn btn-secondary" href="/admin/new/addNew">Add News</a></div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                     User
                                 </a>
                                 <div id="target4" class="collapse d-flex flex-column">
-                                    <div><a class="btn btn-secondary" href="/admin/user/listUser">List User</a></div>
+                                    <div><a class="btn btn-secondary" href="/admin/user/listUser5">List User</a></div>
                                     <div><a class="btn btn-secondary" href="/admin/user/addUser">Add User</a></div>
                                 </div>
                             </div>
