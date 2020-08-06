@@ -19,7 +19,7 @@ return [
     ],
 
     'defaults' => [
-        'guard' => 'admin',
+        'guard' => 'web',
         'passwords' => 'admin',
     ],
 

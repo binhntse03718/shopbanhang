@@ -22,12 +22,12 @@ Route::get('/', function () {
 Route::get('home', 'HomeController@getHome');
 
 //Auth
-Route::get('dangnhap', 'AdminController@ViewResult');
+Route::get('admin/dangnhap', 'AdminController@getLogin');
 
-Route::post('dangnhap', 'AdminController@AdminLogin')->name('login');
+Route::post('admin/dangnhap', 'AdminController@postLogin');
 
 //Admin
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'adminlogin'], function () {
     Route::get('dashboard', function() {
         return view('layout_admin.dashboard');
     });

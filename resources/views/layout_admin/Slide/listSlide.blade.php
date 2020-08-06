@@ -61,12 +61,11 @@
                         </div>
                         <div class="combox">
                             <select onchange="window.location = this.options[this.selectedIndex].value">
-                                <option id="5" value="/admin/slide/listSlide5">5</option>
-                                <option id="10" value="/admin/slide/listSlide10">10</option>
+                                <option value="none">Select item display on page :
+                                <option value="/admin/slide/listSlide5">5</option>
+                                <option value="/admin/slide/listSlide10">10</option>
                             </select>
                         </div>
-                        <script>
-                        </script>
                     </div>
                 </div>
             </div>

@@ -8,18 +8,20 @@ use App\Model\Admin;
 
 class AdminController extends Controller
 {
-    public function ViewResult() {
+    public function getLogin() {
         return view('layout_admin.login');
     }
 
-    public function AdminLogin(Request $request) {
+    public function postLogin(Request $request) {
+        $username = $request->input('username');
+		$password = $request->input('password');
 
-        $check = $request->only('username', 'password');
-
-        if(Auth::attempt($check)) {
-            return redirect('layout_admin.dashboard');
-        } else {
-            return redirect('layout_admin.login')->with(dd('Sai tên mật khẩu'));
-        }
+		if( Auth::attempt(['username' => $username, 'password' =>$password])) {
+			// Kiểm tra đúng email và mật khẩu sẽ chuyển trang
+            // return redirect('hocsinh');
+            dd('1');
+		} else {
+			dd('2');
+		}
     }
 }

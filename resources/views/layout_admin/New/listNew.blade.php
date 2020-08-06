@@ -53,8 +53,17 @@
                             </tbody>
                         </table>
                     </div>
-                    <div>
-                        {!! $new->links() !!}
+                    <div class="pagination">
+                        <div class="page">
+                            {!! $new->links() !!}
+                        </div>
+                        <div class="combox">
+                            <select onchange="window.location = this.options[this.selectedIndex].value">
+                                <option value="none">Select item display on page :
+                                <option value="/admin/slide/listSlide5">5</option>
+                                <option value="/admin/slide/listSlide10">10</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>

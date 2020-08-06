@@ -19,8 +19,8 @@
                 </div>
                 <div class="input-group d-flex flex-column align-content-center">
                     <fieldset>
-                    <form action="dangnhap" method="POST">
-                        @csrf
+                    <form action="/admin/dangnhap" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="text" name="username" class="w-50" placeholder="Username">
                         <input type="password" name="password" class="w-50" placeholder="Password">
                         <button class="btn" type="submit">Login</button>
