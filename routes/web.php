@@ -19,13 +19,6 @@ Route::get('/', function () {
 });
 
 //Back-end
-Route::get('home', 'HomeController@getHome');
-
-//Auth
-Route::get('admin/dangnhap', 'AdminController@getLogin');
-
-Route::post('admin/dangnhap', 'AdminController@postLogin');
-
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => 'adminlogin'], function () {
     Route::get('dashboard', function() {
@@ -84,3 +77,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminlogin'], function () {
         Route::get('deleteUser/{id}', 'AdminUserController@deleteUser');
     });
 });
+
+//Auth
+Route::get('admin/dangnhap', 'AdminController@getLogin');
+
+Route::post('admin/dangnhap', 'AdminController@postLogin');
+
+
+//User
+Route::get('home', 'HomeController@getHome');
